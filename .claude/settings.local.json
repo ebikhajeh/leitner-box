@@ -9,7 +9,8 @@
       "Bash(bun install:*)",
       "Bash(bun src/index.ts)",
       "Bash(curl -s http://localhost:3000/api/health)",
-      "Bash(bun run:*)"
+      "Bash(bun run:*)",
+      "Bash(bunx prisma:*)"
     ]
   }
 }
