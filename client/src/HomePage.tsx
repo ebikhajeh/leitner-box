@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router";
+import { Button } from "@/components/ui/button";
 
 interface User {
   id: string;
@@ -25,16 +26,13 @@ export default function HomePage({ user, onSignOut }: Props) {
 
   return (
     <div>
-      <nav className="flex items-center justify-between px-6 py-3 border-b border-gray-200">
+      <nav className="flex items-center justify-between px-6 py-3 border-b">
         <span className="font-semibold text-lg">Leitner Box</span>
         <div className="flex items-center gap-4">
-          <span className="text-sm text-gray-600">{user.name || user.email}</span>
-          <button
-            onClick={handleSignOut}
-            className="text-sm px-3 py-1.5 border border-gray-300 rounded hover:bg-gray-50 transition-colors"
-          >
+          <span className="text-sm text-muted-foreground">{user.name || user.email}</span>
+          <Button variant="outline" size="sm" onClick={handleSignOut}>
             Sign out
-          </button>
+          </Button>
         </div>
       </nav>
       <main className="p-6">

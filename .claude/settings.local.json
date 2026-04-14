@@ -78,7 +78,9 @@
       "Bash(node -e ':*)",
       "Bash(npx kill-port:*)",
       "Bash(npm install:*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(npx shadcn@latest init -d)",
+      "Bash(npx shadcn@latest add input label card)"
     ]
   }
 }
