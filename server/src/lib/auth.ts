@@ -10,12 +10,20 @@ if (!secret) throw new Error("BETTER_AUTH_SECRET is not set");
 if (!baseURL) throw new Error("BETTER_AUTH_URL is not set");
 if (!clientURL) throw new Error("CLIENT_URL is not set");
 
+if (process.env.NODE_ENV === "production" && !baseURL.startsWith("https://")) {
+  throw new Error("BETTER_AUTH_URL must use HTTPS in production");
+}
+
 export const auth = betterAuth({
   database: prismaAdapter(db, {
     provider: "postgresql",
   }),
   emailAndPassword: {
     enabled: true,
+    minPasswordLength: 12,
+  },
+  advanced: {
+    useSecureCookies: process.env.NODE_ENV === "production",
   },
   secret,
   baseURL,

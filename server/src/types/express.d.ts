@@ -7,8 +7,8 @@ type GetSessionResult = NonNullable<
 declare global {
   namespace Express {
     interface Request {
-      user: GetSessionResult["user"];
-      session: GetSessionResult["session"];
+      user?: GetSessionResult["user"];
+      session?: GetSessionResult["session"];
     }
   }
 }
