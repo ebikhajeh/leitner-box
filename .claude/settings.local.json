@@ -72,7 +72,11 @@
       "Bash(rm -f /tmp/s2.txt)",
       "Bash(PORT=3002 bun src/index.ts)",
       "Bash(curl -s http://localhost:3002/api/health)",
-      "Bash(curl -s http://localhost:3002/api/protected)"
+      "Bash(curl -s http://localhost:3002/api/protected)",
+      "Bash(curl:*)",
+      "Bash(bun pm:*)",
+      "Bash(node -e ':*)",
+      "Bash(npx kill-port:*)"
     ]
   }
 }
