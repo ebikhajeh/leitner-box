@@ -53,37 +53,45 @@ export default function LoginPage({ onLogin }: Props) {
   }
 
   return (
-    <div style={{ maxWidth: 360, margin: "80px auto", padding: "0 16px" }}>
-      <h1>Log in</h1>
+    <div className="max-w-sm mx-auto mt-20 px-4">
+      <h1 className="text-3xl font-semibold mb-6">Log in</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div style={{ marginBottom: 12 }}>
-          <label htmlFor="email">Email</label>
-          <br />
+        <div className="mb-3">
+          <label htmlFor="email" className="block text-sm font-medium mb-1">
+            Email
+          </label>
           <input
             id="email"
             type="email"
             {...register("email")}
-            style={{ width: "100%", padding: "6px 8px", marginTop: 4 }}
+            className="w-full border border-gray-300 rounded px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           {errors.email && (
-            <p style={{ color: "red", margin: "4px 0 0" }}>{errors.email.message}</p>
+            <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
           )}
         </div>
-        <div style={{ marginBottom: 16 }}>
-          <label htmlFor="password">Password</label>
-          <br />
+        <div className="mb-4">
+          <label htmlFor="password" className="block text-sm font-medium mb-1">
+            Password
+          </label>
           <input
             id="password"
             type="password"
             {...register("password")}
-            style={{ width: "100%", padding: "6px 8px", marginTop: 4 }}
+            className="w-full border border-gray-300 rounded px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           {errors.password && (
-            <p style={{ color: "red", margin: "4px 0 0" }}>{errors.password.message}</p>
+            <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>
           )}
         </div>
-        {serverError && <p style={{ color: "red", marginBottom: 12 }}>{serverError}</p>}
-        <button type="submit" disabled={isSubmitting} style={{ width: "100%", padding: "8px" }}>
+        {serverError && (
+          <p className="text-red-500 text-sm mb-3">{serverError}</p>
+        )}
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="w-full bg-blue-600 text-white py-2 rounded font-medium hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+        >
           {isSubmitting ? "Logging in…" : "Log in"}
         </button>
       </form>

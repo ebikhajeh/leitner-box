@@ -76,7 +76,9 @@
       "Bash(curl:*)",
       "Bash(bun pm:*)",
       "Bash(node -e ':*)",
-      "Bash(npx kill-port:*)"
+      "Bash(npx kill-port:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)"
     ]
   }
 }
